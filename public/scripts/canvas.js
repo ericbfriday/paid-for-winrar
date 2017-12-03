@@ -40,7 +40,7 @@ class Canvas {
 
 		let camx = 0;
 		let camy = 0;
-		let size = 10;
+		let size = 128;
 
 		for(let i=0; i<this.map.tiles.length; ++i) {
 			let tile = this.map.tiles[i];
