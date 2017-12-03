@@ -1,7 +1,11 @@
+'use strict';
+const dotenv = require('dotenv');
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('testdatabase', 'root', 'buffy666', {
-  dialect: 'mysql',
+require('dotenv').config();
+
+const sequelize = new Sequelize(process.env.PFW_DATABASE, process.env.PFW_USERNAME, process.env.PFW_PASSWORD, {
   host: 'localhost',
+  dialect: 'mysql',
 
   pool: {
     max: 5,
@@ -11,15 +15,4 @@ const sequelize = new Sequelize('testdatabase', 'root', 'buffy666', {
   }
 });
 
-User.findAll().then(users => {
-  console.log(users);
-});
-
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+module.exports = sequelize;
