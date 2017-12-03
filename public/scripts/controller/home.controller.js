@@ -3,14 +3,17 @@ myApp.controller('HomeController', function($http) {
 
     let tiles = [];
     let gameObjects = [];
-    
+    let canvas = null;
+
     vm.step = function(timeStamp) {
-    	console.log(timeStamp);
+    	
+        vm.canvas.draw(timeStamp);
     	window.requestAnimationFrame(vm.step);
     }
 
     vm.startGame = function() {
-    	vm.getMap();
+    	vm.canvas = new Canvas(document.getElementById("canvas"));
+        vm.getMap();
     	setInterval(vm.getMap, 1000);
 		vm.step();
     }
