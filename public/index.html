@@ -24,6 +24,9 @@
     <script src="/scripts/controller/home.controller.js"></script>
     <script src="/scripts/controller/example.controller.js"></script>
     <script src="/scripts/services/example.service.js"></script>
+
+    <script src="/scripts/canvas.js"></script>
+
     <link rel="stylesheet" href="/styles/styles.css"></link>
 </head>
 
@@ -33,9 +36,11 @@
             <![endif]-->
 
     <h1>Hello, world!</h1>
+    
+    <canvas width="1024" height="768" style="border: 1px solid black"></canvas>
+    <script>Canvas.attachToDOM()</script>
 
     <ng-view>
-
     </ng-view>
 </body>
 
