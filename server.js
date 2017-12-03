@@ -1,10 +1,12 @@
-var express = require( 'express' );
-var app = express();
-var bodyParser = require( 'body-parser');
-var example = require('./modules/routes/example');
-var index = require('./modules/routes/index');
-var ExampleModel = require('./models/example.model.js');
-var port = process.env.PORT || 8080;
+'use strict';
+const express = require( 'express' );
+const app = express();
+const bodyParser = require( 'body-parser');
+const example = require('./modules/routes/example');
+const index = require('./modules/routes/index');
+const ExampleModel = require('./models/example.model.js');
+const port = process.env.PORT || 8080;
+require('dotenv').config();
 
 app.use( express.static( 'public' ) );
 app.use( '/', index );
