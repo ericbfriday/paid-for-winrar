@@ -48,7 +48,7 @@ const drawMap = function() {
 				xPos: i,
 				yPos: j,
 				tileType: getTileType(),
-				gameObject: getGameObject()
+				isOccupied: false
 			});
 		}
 	}
@@ -56,12 +56,15 @@ const drawMap = function() {
 	tiles.forEach(function (tile) {
 		const gameObject = getGameObject();
 
-		if(gameObject)
+		if(gameObject) {
+			tile.isOccupied = true;
 			gameObjects.push({
 				xPos: tile.xPos,
 				yPos: tile.yPos,
 				type: gameObject
 			});
+		}
+			
 	});
 
 	return {tiles, gameObjects};

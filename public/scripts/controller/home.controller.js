@@ -5,7 +5,6 @@ myApp.controller('HomeController', function($http) {
     let gameObjects = [];
     
     vm.step = function(timeStamp) {
-    	console.log(timeStamp);
     	window.requestAnimationFrame(vm.step);
     }
 
