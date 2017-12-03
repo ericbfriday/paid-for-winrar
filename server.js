@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require( 'body-parser');
 var example = require('./modules/routes/example');
 var index = require('./modules/routes/index');
-// var ExampleModel = require('./models/example.model.js');
+var ExampleModel = require('./models/example.model.js');
 var port = process.env.PORT || 8080;
 
 app.use( express.static( 'public' ) );

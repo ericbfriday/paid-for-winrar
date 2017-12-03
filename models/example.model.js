@@ -1,11 +1,34 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('testdatabase', 'root', 'foobar', {
+  dialect: 'mysql',
+  host: 'localhost',
 
-var Schema = new Schema({
-    exampleKey: Number,
-    exampleKey2: String
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000
+  }
 });
 
-var ExampleModel = mongoose.model('listings', Schema);
+const User = sequelize.define('user', {
+  firstName: {
+    type: Sequelize.STRING
+  },
+  lastName: {
+    type: Sequelize.STRING
+  }
+});
 
-module.exports = ExampleModel;
+User.findAll().then(users => {
+  console.log(users);
+});
+
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
