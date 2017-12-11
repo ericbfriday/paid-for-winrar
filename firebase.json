@@ -1,0 +1,22 @@
+{
+    "database": {
+      "rules": "database.rules.json"
+    },
+    //   "hosting": {
+    //     "public": "public"
+    //   }
+    // }
+  
+    "hosting": {
+      // "public": "./", <-- original public hosting route from google. Changed to match public from Luke's example.
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "database-rules.json",
+        "storage.rules",
+        ".env",
+        ".gitignore",
+        ".jshintrc"
+      ]
+    }
+  }

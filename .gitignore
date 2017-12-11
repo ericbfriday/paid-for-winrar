@@ -60,3 +60,6 @@ typings/
 .jslintrc
 .jshintrc
 .eslintrc
+
+#firebase
+firebase-service-account.json

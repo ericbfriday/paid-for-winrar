@@ -1,0 +1,22 @@
+// VV rules would prevent anyone from reading and writing to DB.
+{
+  "rules": {
+    ".read": "false",
+    ".write": "false"
+  }
+}
+
+// Google rules example and doc: https://firebase.google.com/docs/database/security/quickstart#sample-rules
+// These rules grant access to a node matching the authenticated
+// // user's ID from the Firebase auth token
+// {
+//     "rules": {
+//       "users": {
+//         "$uid": {
+//           ".read": "$uid === auth.uid",
+//           ".write": "$uid === auth.uid"
+//         }
+//       }
+//     }
+//   }
+  
